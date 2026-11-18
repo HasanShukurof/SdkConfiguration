@@ -1,0 +1,12 @@
+# 1. SDK-nın Xarici Public API-sini qoru (adları a,b,c olmasın)
+-keep public class com.example.mysdk.MySdk {
+    public *;
+}
+
+# 2. JSON/Response DTO modellərinin sahələrinin qarışmasının qarşısını al
+-keepclassmembers class com.example.mysdk.model.** {
+    <fields>;
+}
+
+
+# 3. SDK daxilindəki internal/private kodlar isə R8 tərəfindən obfuscate ediləcək (a, b, c olacaq).
